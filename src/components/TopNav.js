@@ -7,7 +7,7 @@ function TopNav(){
             
              <Navbar.Brand href="#home" className='ms-4'>My Portfolio</Navbar.Brand>
              <Nav className="ms-auto me-4">
-               <Nav.Link href="#home">Home</Nav.Link>
+               <Nav.Link href="/">Home</Nav.Link>
                <Nav.Link href="#features">Features</Nav.Link>
              </Nav>
           
