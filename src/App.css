@@ -1,38 +1,187 @@
-.App {
-  text-align: center;
+*{
+  font-family: sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.smallTopNav{
+  display: none !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.mainsection{
+  /* min-height: 60vh; */
+  background-color: rgba(166, 204, 203, 0.366);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: center;  
+}
+
+.left-section {
+  min-height: 60vh;
+  max-width: 40vw;
+  flex: 1;
+  background: #dcdcdc;
+  padding: 2rem; 
+}
+
+.logo {
+  /* position: absolute; */
+  top: 1rem;
+  left: 2rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.intro .greeting {
+  font-size: 1.2rem;
+}
+
+.intro .name {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+}
+
+.intro .role {
+  color: #888;
+  font-weight: 500;
+}
+
+.intro .role {
+  color: #888;
+  font-weight: 500;
+}
+
+.icons span {
+  margin-right: 1rem;
+  background: #eee;
+  padding: 0.5rem;
+  border-radius: 4px;
+  box-shadow: 2px 2px 3px #ccc;
+  cursor: pointer;
+}
+
+.right-section {
+  min-height: 60vh;
+  width: 70vw;
+  flex: 1;
+  background: #000;
   color: white;
+  position: relative;
+  padding: 2rem;
+  overflow: hidden;
+
 }
 
-.App-link {
-  color: #61dafb;
+.nav {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav button {
+  background: white;
+  color: black;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.profile-pic {
+  position: absolute;
+  bottom: 0;
+  right: auto;
+  left: 3em;
+  /* width: 300px; */
+}
+.note {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 3rem;
+  font-size: 0.6rem;
+  color: #ccc;
+  text-align: right;
+}
+
+/* .seperator{
+  background-color: red;
+  border: 2px solid transparent;
+  z-index: 1111;
+  transform: skewx(-10deg);
+} */
+
+.skills h3, .skills h4{
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+  margin: 10px;
+  max-width: fit-content;
+  text-transform: capitalize;
+}
+
+.skills h3{
+    border: 4px solid black;
+
+}
+
+.tech-icons svg {
+  transition: transform 0.3s;
+}
+
+.tech-icons svg:hover, .Theicons:hover{
+  transform: scale(1.2);
+}
+.contact_btn:hover{
+  transform: scale(1.1);
+  background-color: #54B4D3;
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+.contact_btn{
+    background-color: white;
+    color: black;
+    /* text-transform: uppercase; */
+    border-radius: 20px;
+}
+
+@media (max-width: 800px){
+  .second_nav_for_lg, .LargeTopNav{
+    display: none !important;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .smallTopNav{
+  display: block !important;
+}
+
+.collapse .navbar-nav{
+  display: block !important;
+}
+}
+
+@media (max-width: 700px){
+  
+  .main-container{
+    flex-direction: column-reverse;
   }
+
+   .left-section{
+    min-width: 100vw;
+   }
+
+   .right-section{
+    min-height: 80vh;
+    min-width: 100vw;
+   }
+   
 }
