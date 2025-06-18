@@ -1,4 +1,3 @@
-import profile from '../assets/profile.png';
 import SocialLinks from "../components/SocialLinks";
 import SecondNavbar from "../components/SecondNavbar"
 
@@ -17,8 +16,8 @@ function MainSection() {
 
       <div className="right-section">
         <SecondNavbar/>
-        <img src={profile} alt="profile" className="profile-pic h-50" />
-        {/* <p className="note">this is not my photo,<br />but I dearly hope to<br />get one just like this</p> */}
+        <p className="note">Photo by Growtika on Unsplash
+      </p>
       </div>
 
     </div>

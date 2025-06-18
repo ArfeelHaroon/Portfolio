@@ -1,14 +1,16 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Navbar, Nav } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
+import {Link} from 'react-router-dom';
+
 function TopNav(){
     return(
      <div className='LargeTopNav'>
         <Navbar bg="dark" variant="dark" >
             
-             <Navbar.Brand href="#home" className='ms-4'>My Portfolio</Navbar.Brand>
+             <Navbar.Brand className='ms-4'>My Portfolio</Navbar.Brand>
              <Nav className="ms-auto me-4">
-               <Nav.Link href="/">Home</Nav.Link>
-               <Nav.Link href="#features">Features</Nav.Link>
+               <Link to="/" className='text-decoration-none text-white'>Home</Link>
+               {/* <Nav.Link href="#features">Features</Nav.Link> */}
              </Nav>
           
            </Navbar>
