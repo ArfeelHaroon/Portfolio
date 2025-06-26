@@ -42,10 +42,10 @@ function App() {
 
       <BrowserRouter>
         <Routes>
+          <Route path="*" element={<Navigate to="/" replace />} />
           <Route path='/' element={<HomePage />} />
           <Route path='/Portfolio' element={<HomePage />} />
           <Route path='/contact' element={<ContectMePage />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </BrowserRouter>
     </div>
