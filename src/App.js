@@ -7,7 +7,7 @@ import Skills from "./components/Skills";
 import Certificates from "./components/Certificates";
 import Footer from "./components/Footer";
 import SmallTopnav from "./components/SmallTopNav";
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import ContactPage from './pages/ContactPage';
 
 function HomePage() {
@@ -43,7 +43,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<HomePage />} />
+          <Route path='/Portfolio' element={<HomePage />} />
           <Route path='/contact' element={<ContectMePage />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </BrowserRouter>
     </div>
