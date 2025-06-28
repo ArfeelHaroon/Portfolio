@@ -16,7 +16,7 @@ function ContactPage() {
         }
 
         const getIsFormValid = () => {            
-            if (firstName == "" || !validateEmail(email) || Message.length < 2) {
+            if (firstName.trim() === "" || !validateEmail(email) || Message.trim().length <= 2) {
             return false;
             
             } else {
