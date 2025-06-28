@@ -19,15 +19,15 @@ function Certificates() {
                 <div className="container text-center mt-4">
                     <div className="align-items-center">
                         <div className="row">
-                            <img src={HTMLImg} className='certificate_imgs'/>
-                            <img src={CSSImg} className='certificate_imgs'/> 
+                            <img alt="HTML Certificate" src={HTMLImg} className='certificate_imgs'/>
+                            <img alt="CSS Certificate" src={CSSImg} className='certificate_imgs'/> 
                         </div>
                         <div className="row">
-                            <img src={JSImg} className='certificate_imgs'/>
-                            <img src={resturantImg} className='certificate_imgs'/> 
+                            <img alt="JS Certificate" src={JSImg} className='certificate_imgs'/>
+                            <img alt="ResturantSite Certificate" src={resturantImg} className='certificate_imgs'/> 
                         </div>
                         <div className="row">
-                            <img src={reactImg} className='certificate_imgs'/>
+                            <img alt="React Certificate" src={reactImg} className='certificate_imgs'/>
                             {/* <img src={resturantImg} className='certificate_imgs'/>  */}
                         </div>
 
