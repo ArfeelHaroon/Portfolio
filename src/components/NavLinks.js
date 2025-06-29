@@ -7,7 +7,7 @@ function NavLinks(){
             <Nav.Link href="#about">About me</Nav.Link>
             <Nav.Link href="#skills">Skills</Nav.Link>
             <Nav.Link href="#certificates">Certificates</Nav.Link>
-            <Link to='/contact' className='d-block contact_btn fw-bold cursor-pointer text-center text-decoration-none py-2 px-2 mt-2 ms-4 mb-2'>Contact Me</Link>
+            <Link to='/contact' className='d-block contact_btn fw-bold cursor-pointer text-center text-decoration-none py-2 px-2 mt-sm-2 mt-md-0 ms-4 mb-sm-2 mb-md-0'>Contact Me</Link>
     </Nav>
   );
 }
