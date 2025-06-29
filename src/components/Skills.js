@@ -71,19 +71,19 @@ function Skills() {
             </div>
             <div className="learning">
                <h4 className="px-3 py-2 text-center m-auto m-md-0"> Learning</h4>
-               <div className="container text-center mt-4">
+               <div className="container text-center mt-5">
                   <div className="row align-items-center">
-                     <div className="col-12 col-sm-6 col-md-4 col-xl-3">
+                     <div className="col-6 col-md-4 col-xl-3">
                        <FaDocker size={60} color="#61DAFB"/>
                        <p>Docker</p>
                      </div>
 
-                     <div className="col-12 col-sm-6 col-md-4 col-xl-3">
+                     <div className="col-6 col-md-4 col-xl-3">
                         <SiJson size={60} />
                        <p>REST API / JSON</p>
                      </div>
 
-                     <div className="col-12 col-sm-6 col-md-4 col-xl-3">
+                     <div className="col-6 col-md-4 col-xl-3">
                         <SiTailwindcss size={60} color="#61DAFB"/>
                        <p>Tailwind CSS</p>
                      </div>
