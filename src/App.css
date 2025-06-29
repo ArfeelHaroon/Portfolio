@@ -118,12 +118,10 @@
   text-align: right;
 }
 
-/* .seperator{
-  background-color: red;
-  border: 2px solid transparent;
-  z-index: 1111;
-  transform: skewx(-10deg);
-} */
+
+.SkillsContainer{
+  width: 75%;
+}
 
 .skills h3, .skills h4{
   border-left: 3px solid black;
@@ -287,4 +285,8 @@ button[disabled] {
   .contactForm{
     width: 90%;
   }
+
+  .SkillsContainer{
+  width: 100%;
+}
 }
