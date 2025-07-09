@@ -1,67 +1,84 @@
 import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
-import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
-import Row from 'react-bootstrap/Row';
+import { validateEmail } from "../utils";
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 
 function ContactPage() {
-    const [validated, setValidated] = useState(false);
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+     const [email, setEmail] = useState("");
+    const [CompanyName, setCompanyName] = useState("");
+    const [Message, setMessage] = useState("");
 
-  const handleSubmit = (event) => {
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
+        const EmailValidator = (e) => {
+            const emailValue = e.target.value;
+            setEmail(emailValue);
+            validateEmail(emailValue);
+        }
 
-    setValidated(true);
-  };
+        const getIsFormValid = () => {            
+            if (firstName.trim() === "" || !validateEmail(email) || Message.trim().length <= 2) {
+            return false;
+            
+            } else {
+            return true;
+            
+            }
+        };
+       const form = useRef();
+        const handleSubmission = (e) => {
+           e.preventDefault();
+            emailjs.sendForm('service_9122zrm', 'template_fd7fvtc', form.current, {
+                    publicKey: 'ptbnZvDuFGwqyW_me',})
+                .then(
+                    () => {
+                    alert('SUCCESS!');
+                    },
+                    (error) => {
+                    console.log('FAILED...', error.text);
+                    },
+                );
+        }
+  
         return (
-            <div className='w-100 mx-auto border'>
-                <h1>hello</h1>
-                <Form noValidate validated={validated} onSubmit={handleSubmit}>
-                    <Row className="mb-3 mx-auto justify-content-center">
-                        <Form.Group as={Col} md="9" controlId="validationCustom01">
-                            <Form.Control
-                                required
-                                type="text"
-                                placeholder="Enter Your Name*"
-                            />
-                            <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                        </Form.Group>
+            <div className='mx-auto w-md-100 contactForm mt-5'>
+               <form ref={form} onSubmit={handleSubmission}>
+                <fieldset>
+                    <div className="Field"> 
+                        <label className="fs-6 fw-bold" htmlFor='firstName'> 
+                            First name <sup>*</sup> 
+                        </label> 
+                         <input name='firstName' value={firstName}  onChange={(e) => { setFirstName(e.target.value);}} placeholder="First name" />
+                    </div>
 
-                    </Row>
-                    <Row className="mb-3 mx-auto justify-content-center">
-                        <Form.Group as={Col} md="9" controlId="validationCustom02">
-                            <Form.Control
-                                required
-                                type="email"
-                                placeholder="Enter Your Email*"
-                            />
-                            <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                             <Form.Control.Feedback type="invalid">
-                                Please enter a valid email.
-                             </Form.Control.Feedback>
-                        </Form.Group>
-                    </Row>
-                    <Row className="mb-3  mx-auto justify-content-center">
-                        <Form.Group as={Col} md="9" controlId="validationCustom02">
-                            <Form.Control
-                                type="number"
-                                placeholder="Enter Your Phone Number"
-                            />
-                            <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                        </Form.Group>
-                    </Row>
-                     <Row className="mb-3  mx-auto justify-content-center">
-                        <Col md={9}>
-                        <Form.Control required as="textarea" placeholder="Leave a comment here" className='mw-100'/>
-                        </Col>
-                     </Row>
-                          <Button type="submit">Submit form</Button>
-                </Form>
+                    <div className="Field"> 
+                        <label className="fs-6 fw-bold" htmlFor='lastName'> 
+                            Last name
+                        </label> 
+                         <input name='lastName' value={lastName}  onChange={(e) => { setLastName(e.target.value);}} placeholder="Last name" />
+                    </div>
+
+                    <div className="Field">
+                        <label className="fs-6 fw-bold" htmlFor='email'> Email address <sup>*</sup> </label>
+                        <input name='email' placeholder="Email address" value={email} onChange={EmailValidator}/>
+                    </div>
+                    <div className="Field"> 
+                        <label className="fs-6 fw-bold" htmlFor='companyName'> 
+                            Company name
+                        </label> 
+                         <input name='companyName' value={CompanyName}  onChange={(e) => { setCompanyName(e.target.value);}} placeholder="Company name" />
+                    </div>
+
+                    <div className="Field"> 
+                        <label className="fs-6 fw-bold" htmlFor='message'> Message <sup>*</sup> </label> 
+                        <textarea name='message' value={Message} onChange={(e)=> setMessage(e.target.value)} rows="7"></textarea>
+                    </div>
+                    <button type="submit"  disabled={!getIsFormValid()}> 
+                        Submit
+                    </button> 
+                </fieldset>
+               </form>
             </div>
         );
     }
