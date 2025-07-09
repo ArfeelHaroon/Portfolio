@@ -119,7 +119,7 @@
 }
 
 
-.SkillsContainer{
+.SkillsContainer, .certificatesContainer{
   width: 75%;
 }
 
@@ -159,9 +159,18 @@
     border-radius: 20px;
 }
 
-.certificate_imgs{
-  max-width: 50% !important;
-  margin-bottom: 20px;
+.certificate-img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.certificate-img:hover {
+    transform: scale(1.03);
+    border-color: #007bff;
 }
 
 .contactForm{
@@ -264,29 +273,31 @@ button[disabled] {
 
    .left-section{
     min-width: 100vw;
+    min-height: 80vh;
+    position: absolute;
+    z-index: 1;
+    background: #f7f4f465;
    }
 
    .right-section{
+    z-index: 0;
+    opacity: 0.5;
     min-height: 80vh;
     min-width: 100vw;
-   }
-
-   .certificate_imgs{
-    max-width: 100% !important;
    }
 
    form{
      width: 100%;
    }
-   
 }
 
+@media (max-width: 500px){
+   .SkillsContainer, .certificatesContainer{
+      width: 100%;
+  }
+}
 @media (max-width: 400px){
   .contactForm{
     width: 90%;
   }
-
-  .SkillsContainer{
-  width: 100%;
-}
 }
