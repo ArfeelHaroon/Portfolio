@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { validateEmail } from "../utils";
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 
 function ContactPage() {
@@ -24,14 +26,24 @@ function ContactPage() {
             
             }
         };
-
+       const form = useRef();
         const handleSubmission = (e) => {
            e.preventDefault();
+            emailjs.sendForm('service_9122zrm', 'template_fd7fvtc', form.current, {
+                    publicKey: 'ptbnZvDuFGwqyW_me',})
+                .then(
+                    () => {
+                    alert('SUCCESS!');
+                    },
+                    (error) => {
+                    console.log('FAILED...', error.text);
+                    },
+                );
         }
   
         return (
             <div className='mx-auto w-md-100 contactForm mt-5'>
-               <form onSubmit={handleSubmission}>
+               <form ref={form} onSubmit={handleSubmission}>
                 <fieldset>
                     <div className="Field"> 
                         <label className="fs-6 fw-bold" htmlFor='firstName'> 
