@@ -10,7 +10,7 @@ function TopNav() {
         <Navbar.Brand className='ms-4'>
           <Link to="/" onClick={() => {
             window.scrollTo(0, 0); // optional: scrolls to top
-          }} className='text-decoration-none text-white'>My Portfolio v.2</Link>
+          }} className='text-decoration-none text-white'>My Portfolio</Link>
         </Navbar.Brand>
         <Nav className="ms-auto me-4">
           <Link to="/" className='text-decoration-none text-white'>Home</Link>
