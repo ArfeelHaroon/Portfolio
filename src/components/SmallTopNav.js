@@ -7,7 +7,7 @@ function SmallTopNav() {
   return (
     <Navbar expand="none" className="smallTopNav" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">My Portfolio</Navbar.Brand>
+        <Navbar.Brand href="/">My Portfolio</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
